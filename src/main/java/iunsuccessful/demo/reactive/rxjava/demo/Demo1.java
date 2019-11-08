@@ -16,7 +16,7 @@ import org.slf4j.LoggerFactory;
  *
  *
  * subscribeOn(Scheduler.io()) 和 observeOn(AndroidSchedulers.mainThread()) 的使用方式非常常见，它适用于多数的 『后台线程取数据，主线程显示』的程序策略。
- * 
+ *
  * 依韵 2019-11-07
  */
 public class Demo1 {
@@ -32,7 +32,7 @@ public class Demo1 {
 
 
         })
-//                .observeOn(Schedulers.newThread())
+                .observeOn(Schedulers.single())
                 .subscribeOn(Schedulers.io())
                 .subscribe(new Observer<Integer>() { // 第三步：订阅
 
